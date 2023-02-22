@@ -1,0 +1,22 @@
+.dropdown-content{
+    padding: 20px;
+    position: absolute;
+    left: -500px;
+}
+.dropdown-text{
+    margin-top: 4px;
+    padding-right: 52px;
+}
+.drop-main:hover .dropdown-content{
+    border: 1px solid rgb(157, 240, 221);
+    padding: 2px;
+ position: absolute;
+ z-index: 1;
+ background-color: #7FE9DE;
+ opacity: none;
+ top: 34px;
+ font-style: oblique;
+ text-align: start;
+ left:74%;
+ transition: .5s;
+}
