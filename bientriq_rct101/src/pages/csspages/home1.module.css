@@ -1,0 +1,18 @@
+.upImage{
+    background-color: black;
+    width: 24%;
+    
+   
+}
+/* .upImage::-webkit-scrollbar{
+    width: 0;
+} */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .upImage{
+        overflow-clip-margin: content-box; 
+        display: inline-block;
+        overflow-x: scroll;
+        width: 100%;
+        margin: auto;
+    }
+ }
