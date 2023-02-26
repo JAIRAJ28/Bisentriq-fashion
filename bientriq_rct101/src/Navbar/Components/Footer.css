@@ -1,6 +1,7 @@
 .check1st {
     display: flex;
     /* border: 1px solid red; */
+    margin: auto;
     width: 80%;
     margin: auto;
     margin-top: 50px;
@@ -10,8 +11,6 @@
     font: 600;
   }
   .firstt {
-    border: 1px solid #5c5c5f;
-   
     letter-spacing: 0.8px;
     margin: auto;
     font: 620;
@@ -168,10 +167,15 @@
     color: #222a95;
   }
   @media screen and (min-width: 320px) and (max-width: 767px) {
+    .first{
+      margin: auto;
+      width: 90%;
+    }
+    
     .footer {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      width: 83%;
+      width: 80%;
       margin: auto;
       
       list-style: none;

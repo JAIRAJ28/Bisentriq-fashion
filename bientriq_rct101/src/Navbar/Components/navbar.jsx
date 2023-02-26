@@ -25,19 +25,27 @@ import {
   } from '@chakra-ui/icons';
   import "./navbar.css"
   import { HiOutlineShoppingBag } from "react-icons/hi2";
+  import { TbUserOff } from "react-icons/tb"
   // import {Link} from "react-router-dom"
+  import { useContext } from "react"
+import { Authcontext } from '../Authcontext/contextApi';
+import { useNavigate } from 'react-router-dom';
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
-  
+    const {toggleAuth,isAuth,handelSearch,isSearched}=useContext(Authcontext)
+ const nav=useNavigate()
+
+console.log(isSearched)
+
     return (
       <>
-      <Box position={"sticky"} left="0" top="1" width={"100%"}>
+      <Box position={"sticky"} left="0" top="1" width={"100%"} zIndex="5">
         <Box  bg="#E1FFEE" display={"flex"} justifyContent={'space-between'} >
         <Box display={"flex"}>
              <Link href="/" display={"flex"}>
              <Image 
-             borderTop={"4px solid orange"} ml={"30px"}
-             mt={"20px"}  w="150px" h="50px" overflow={"hidden"} src="https://i.imgur.com/ilvl3WR.jpeg" alt="" />
+              borderBottom={"4px solid #BAD7E9"} ml={"30px"}
+             mt={"20px"}  w="250px" h="50px" overflow={"hidden"} src="https://i.ibb.co/z6fqy86/Screenshot-20230221-191152.png" alt="" />
              </Link>
              <hr />
              <Link href="/home2nd">
@@ -45,8 +53,23 @@ import {
             </Button></Link>
         </Box>
         <Box display={"flex"} mr="1.5em">
-            <Input mt={"20px"} border={"1px solid gray"} mr="1.5em" type="text" placeholder='search bientriq'/>
-            <HiOutlineShoppingBag cursor={"pointer"} margintop={"40px"} size={"50px"}/>
+            <Input mt={"20px"} border={"1px solid gray"} mr="1.5em" type="text" placeholder='search bientriq'
+            
+            onChange={((e)=>{handelSearch(e.target.value)})}
+            
+            
+            />
+          {  isAuth?<HiOutlineShoppingBag cursor={"pointer"}  color="#FFA3FD" margintop={"40px"} size={"50px"}
+          onClick={()=>{
+            nav('/addtocart')
+          }}
+
+          />:<TbUserOff
+           margintop={"40px"} size={"50px"} color="#F55050"
+           onClick={()=>{
+            alert("Please Login")
+           }}
+          />}
         </Box>
         
         </Box>
@@ -263,24 +286,53 @@ import {
     {
       label: 'New!',
       h1:"Shop by Category",
-      href:"/",
+      href:"/newAll",
       children: [
         {
           label: 'Accessories',
-            href: '#',
+            href: '/newAll',
             
           },
           {
             label: 'Beauty & Wellness',
-            href: '#',
+            href: '/',
         },
         {
           label: 'Clothing',
-          href: '#',
+          href: '/fashion',
         },
           {
             label: 'Dresses',
-            href: '#',
+            href: '/fashion',
+          },
+          {
+            label: 'Home & Furniture', 
+            href: '/furniture',
+          }
+        
+        ],
+        Image:"https://ibb.co/w0L9s27"
+      },
+    {
+      label: 'Dresses',
+      href:"/fashion",
+      children: [
+        {
+          label: 'Accessories',
+            href: '/newAll',
+            
+          },
+          {
+            label: 'Beauty & Wellness',
+            href: '/',
+        },
+        {
+          label: 'Clothing',
+          href: '/fashion',
+        },
+          {
+            label: 'Dresses',
+            href: '/newAll',
           },
           {
             label: 'Home & Furniture', 
@@ -291,42 +343,10 @@ import {
             href: '#',
           },
         ],
-        Image:"https://ibb.co/w0L9s27"
-      },
-    {
-      label: 'Dresses',
-      href:"/",
-      children: [
-        {
-            label: 'Accessories',
-            href: '#',
-
-        },
-        {
-          label: 'Beauty & Wellness',
-          href: '#',
-        },
-        {
-            label: 'Clothing',
-            href: '#',
-          },
-          {
-            label: 'Dresses',
-            href: '#',
-          },
-          {
-            label: 'Home & Furniture', 
-            href: '#',
-          },
-          {
-            label: 'Jewelry',
-            href: '#',
-          },
-      ],
     },
     {
       label: 'Clothing',
-      href: '#',
+      href: '/fashion',
     },
     {
       label: 'Shoes',
@@ -342,11 +362,11 @@ import {
       },
       {
         label: 'Home & Furniture',
-        href: '#',
+        href: '/furniture',
       },
       {
         label: 'Beauty & Wellness',
-        href: '#',
+        href: '/furniture',
       },
       {
         label: 'Garden & Outdoor',
