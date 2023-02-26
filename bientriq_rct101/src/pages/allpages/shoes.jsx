@@ -1,22 +1,23 @@
+
+import ShoesStyle from "./shoesSingle"
 import axios from "axios"
 import { useState,useEffect,useReducer } from "react"
 import Sidebar from "../singlepages/sidebar/sidebar"
 import { Link } from "react-router-dom"
 import { Box,Image ,Text,Grid,Button,Spinner } from "@chakra-ui/react"
-import AllCArtComp from "./newUniversal"
+import CartFurniture from "./allfur"
 import { AiOutlineRight ,AiOutlineLeft} from "react-icons/ai";
 import { useContext } from "react"
 import { Authcontext } from "../../Navbar/Authcontext/contextApi"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Cartshoes from "./cartShoes"
 const getData=(name,params,page)=>{
-    return axios.get(`https://anthroapi.onrender.com/cloths?_limit=15&_page=${page}`,{
+    return axios.get(`https://anthroapi.onrender.com/shoes?_limit=15&_page=${page}`,{
       params
       // category:{category}
     })
 }
-
-
 let limit=15
 let url=`https://anthroapi.onrender.com/cloths`
 
@@ -41,30 +42,30 @@ const reducer = (state,action) => {
     }
     }
   };
-  let arr2=[
+  let arr=[
     {
-      imgSrc:"https://i.ibb.co/TMK6tr4/4112210690147-066-b2.webp",
-      des:"Eva Franco Lace Floral Blouse"
+      imgSrc:"https://i.ibb.co/5FDy006/4130943510003-066-b15.webp",
+      des:"Maeve Cropped Racerback Tank"
     },{
-      imgSrc:"https://i.ibb.co/r2XbBqv/4110095140065-010-b2.webp",
-      des:"On Cloudeasy Shampoo"
+      imgSrc:"https://i.ibb.co/GT3Mf6h/2.webp",
+      des:"On Cloudeasy Sneakers"
     },
     {
-      imgSrc:"https://i.ibb.co/MSJphs5/80611452-080-b2.webp",
-      des:"Athena Tapestry"
+      imgSrc:"https://i.ibb.co/gRPG1ZF/4123464030062-035-b2.webp",
+      des:"Hutch Satin Utility Pants"
     },
     {
-      imgSrc:"https://i.ibb.co/z5JVPFh/69978369-000-b.webp",
+      imgSrc:"https://i.ibb.co/QYQMrVJ/62395090-070-b.webp",
       des:"Mila Mirror"
     },
     {
-      imgSrc:"https://i.ibb.co/WBGGxGg/473929246-ls-customerfave-c.webp",
+      imgSrc:"https://i.ibb.co/9GWQ6S9/66039397-072-b2.webp",
       des:"Mac Duggal Indy Chiffon Dress"
     },
 
 
     {
-      imgSrc:"https://i.ibb.co/FWtMsnz/54361464-011-b2.webp",
+      imgSrc:"https://i.ibb.co/FXWVZnt/63828024-048-b2.webp",
       des:"Mac Duggal Indy Chiffon Dress"
     },
     {
@@ -72,7 +73,7 @@ const reducer = (state,action) => {
       des:"Forever That Girl Puff-Sleeve Shirt Dress"
     },
     {
-      imgSrc:"https://i.ibb.co/LZQh9pd/4123348690068-237-b2.webp",
+      imgSrc:"https://i.ibb.co/XsnBcVt/tapestry.webp",
       des:"Geisha Designs Long-Sleeve Printed Maxi Dress"
     },
     {
@@ -80,12 +81,11 @@ const reducer = (state,action) => {
       des:"BHLDN Weddings Belize Dress"
     },
     {
-      imgSrc:"https://i.ibb.co/GT3Mf6h/2.webp",
-      des:"Bistro Tile Monogram Old Fashioned Shoes"
+      imgSrc:"https://i.ibb.co/Y8D527r/39567797-001-b10.webp",
+      des:"Victoria Frame"
     }
 
   ]
-
 
   const responsive = {
     superLargeDesktop: {
@@ -107,7 +107,7 @@ const reducer = (state,action) => {
       items: 1
     }
   };
-export const Alldress=({name})=>{
+export const Shoespg=({name})=>{
     const[state,dispatcher] = useReducer(reducer,initialState);
     const [order,setOrder] = useState("")
     const [filter,setFilter] = useState("")
@@ -152,97 +152,13 @@ console.log(td/limit)
 
     return(
         <>
-                <Grid dispaly={"grid"} templateColumns={['repeat(2, 1fr)','repeat(2, 1fr)','repeat(6, 1fr)']} gap={6}
-        margin="20px"
-        >
-        <Box>
-            <Image
-            width={{base:"40%",md:"100%"}}
-            src="https://i.ibb.co/M8jd9fs/Fall-Site-Topper-1-LS.webp"
-            alt="Falt-salt"
-            />
-            <Text 
-            position="relative"
-            top={["-20px","-80px"]}
-            color={["black","black","white"]}
-            fontWeight="800"
-            
-            >Dresses</Text>
-        </Box>
-        <Box>
-        <Image
-             width={{base:"40%",md:"100%"}}
-            src="https://i.ibb.co/WBwTPqt/Fall-Site-Topper-2-LS.webp"
-            alt="Falt-salt"
-            />
-            <Text 
-            position="relative"
-            top={["-40px","-70px","0px","-80px"]}
-            color={["black","black","black","white"]}
-            fontWeight="800"
-            
-            >Pants</Text>
-        </Box>
-        <Box>
-        <Image
-             width={{base:"40%",md:"100%"}}
-            src="https://i.ibb.co/SyX02zS/Fall-Site-Topper-3-LS.webp"
-            alt="Falt-salt"
-            />
-            <Text 
-            position="relative"
-            top={["-40px","-70px","0px","-80px"]}
-            color={["black","black","black","white"]}
-            fontWeight="800"
-            
-            >Jeans</Text>
-        </Box>
-        <Box>
-        <Image
-             width={{base:"40%",md:"100%"}}
-            src="https://i.ibb.co/SyX02zS/Fall-Site-Topper-3-LS.webp"
-            alt="Falt-salt"
-            />
-            <Text 
-            position="relative"
-            top={["-40px","-70px","0px","-80px"]}
-            color={["black","black","black","white"]}
-            fontWeight="800"
-            
-            >Jeans</Text>
-        </Box>
-        <Box>
-        <Image
-             width={{base:"40%",md:"100%"}}
-            src="https://i.ibb.co/27r7DSm/Fall-Site-Topper-5-LS.webp"
-            alt="Falt-salt"
-            />
-            <Text 
-            position="relative"
-            top={["-40px","-80px","0px","-80px"]}
-            color={["black","black","black","white"]}
-            fontWeight="800"
-            
-            >Gateway And Resorts Fits</Text>
-        </Box>
-        <Box>
-        <Image
-             width={{base:"40%",md:"100%"}}
-            src="https://i.ibb.co/FbY6r1h/Fall-Site-Topper-6-LS.webp"
-            alt="Falt-salt"
-            />
-            <Text 
-            position="relative"
-            top={["-40px","-70px","0px","-80px"]}
-            color={["black","black","black","white"]}
-            fontWeight="800"
-            
-            >Tops</Text>
-        </Box>
-        </Grid>
+
+<Box bg="#4E31AA" color={"white"} w="80%" m="auto">Footwear to last you a lifetime.</Box>
+
         <div 
         style={{
-          display:"flex"
+          display:"flex",
+          marginTop:"50px"
         }}
         >
         <Sidebar/>
@@ -269,10 +185,10 @@ justifyContent={"space-around"}
     >   <option value="">Filter Yor Need</option>
         <option value="asc">Price Low To High</option>
         <option value="desc">Price High To Low</option>
-        <option value="Joslin">Joslin</option>
-        <option value="Letluv">Letluv</option>
-        <option value="Maaji">Maaji</option>
-        <option value="Hutch">Hutch</option>
+        <option value="ASICS">ASICS</option>
+        <option value="ALOHAS">ALOHAS</option>
+        <option value="Bombas">Bombas</option>
+        <option value="Faguo">Faguo</option>
     </select>
     </Box> 
   <Box display={"flex"}>
@@ -313,7 +229,7 @@ justifyContent={"space-around"}
         >
             {
                state.data?.map((item)=>(
-                <AllCArtComp
+                <Cartshoes
                   IMAGE={item.img1?item.img1:item.img}
                   txt1={item.category}
                   name={item.title}
@@ -332,11 +248,11 @@ justifyContent={"space-around"}
 borderTop={"9px solid #F7C8E0"}
 borderBottom={"9px solid #F7C8E0"}
 width={"93%"}
-margin="auto"
+margin="auto" mt="90px" p="20px"
 >
 <Carousel  responsive={responsive}>
-{arr2.map((item)=>(
-  <Box w="70%" mt="90px">
+{arr.map((item)=>(
+  <Box w="70%" >
     <Image src={item.imgSrc} 
     alt="images"
     />

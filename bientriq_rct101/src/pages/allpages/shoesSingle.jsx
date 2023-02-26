@@ -22,7 +22,7 @@ import { useParams } from "react-router-dom"
 import { useEffect,useState } from 'react';
 import axios from 'axios';
 
-const SinglePage=({url,Id})=>{
+const ShoesSingle=({url,Id})=>{
  console.log(url,Id)
  let k=useParams()
  console.log(k)
@@ -31,7 +31,7 @@ let [isLoading,setLoding]=useState(false)
 
 useEffect(()=>{
   setLoding(true)
-  axios.get(`http://localhost:8080/profile/${k.id}`).then((res)=>{setData(res.data)
+  axios.get(`https://anthroapi.onrender.com/shoes/${k.id}`).then((res)=>{setData(res.data)
   setLoding(false)
   console.log(res)
 })
@@ -44,7 +44,7 @@ const handePost=()=>{
   axios({
     method: 'post',
     url: `https://636d2336ab4814f2b279de8f.mockapi.io/car`,
-    data:data
+    data:{...data,quantity:1}
   });
 }
 
@@ -78,7 +78,20 @@ m="30px"
             rounded={'md'}
             alt={'product image'}
             src={
-              data.image
+              data.img1
+            }
+            transition= "transform 0.3s"
+            _hover={{transform:"scale(.9)"}}
+            overflow="hidden"
+            align={'center'}
+            w={'80%'}
+            h={{ base: '100%', sm: '400px', lg: '500px' }}
+          />
+          <Image
+            rounded={'md'}
+            alt={'product image'}
+            src={
+              data.img2
             }
             transition= "transform 0.3s"
             _hover={{transform:"scale(.9)"}}
@@ -97,7 +110,7 @@ m="30px"
               {data.category}
             </Heading>
             <Text
-              // color={useColorModeValue('gray.900', 'gray.400')}
+            
               fontWeight={300}
               fontSize={'2xl'}>
               $-{data.price}
@@ -208,4 +221,4 @@ m="30px"
   )
 }
 
-export default SinglePage
+export default ShoesSingle

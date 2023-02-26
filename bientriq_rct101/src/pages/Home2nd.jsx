@@ -4,6 +4,7 @@ import { Box,Button,Image,Stack,Text ,Link} from '@chakra-ui/react';
 import ImageSlider from './singlecrousel';
 import HomeSimple from './cardhomecrousel';
 import { CardRate } from './Cardwithrate';
+import { useNavigate } from 'react-router-dom';
 let firstcr=[
     {image:"//images.ctfassets.net/5de70he6op10/3Ai7bUZtZi5xY42vRa7nCY/600452ed34e8abb5b1265b516e90ac88/474338746-aliving_hpg_ls_01_1_-2x.jpg"},
       {image:"https://www.californiahomedesign.com/wp-content/uploads/2019/11/190624_Garde0869-2-1024x683.jpg"},
@@ -12,21 +13,29 @@ let firstcr=[
 
 
 export const Home2nd=()=>{
-
+ let nav=useNavigate()
     return(
         <>
-        <Box width={"75%"}  margin="auto">
+        <Box width={"75%"}  margin="auto"
+        mt="20px"
+        >
         <ImageSlider slides={firstcr}  />
 
         <Button
         position={"relative"}
         bg={"#E3DFFD"}
         top="-90px"
+        onClick={()=>{
+            nav("/furniture")
+           }}
         >shop new arrivals</Button>
         <Button
         position={"relative"}
         bg={"#E3DFFD"}
         top="-40px"
+        onClick={()=>{
+            nav("/furniture")
+           }}
         >discover the journal</Button>
         </Box>
 
@@ -35,12 +44,17 @@ export const Home2nd=()=>{
        >
         <Image
         src="//images.ctfassets.net/5de70he6op10/3vtv3Gvfa44vTd7fQDHwr9/147c9e91271d486d330930659291ef57/474338798-aliving_hpg_ls_2.jpg"
-
+        onClick={()=>{
+            nav("/furniture")
+           }}
         />
             <Button
             bg={"#E3DFFD"}
         position={"relative"}
         top="-90px"
+        onClick={()=>{
+            nav("/furniture")
+           }}
         >shop new arrivals</Button>
         <Button
         bg={"#E3DFFD"}
@@ -76,6 +90,9 @@ export const Home2nd=()=>{
        top="-60px"
        color={"gray.700"}
        opacity={"1"}
+       onClick={()=>{
+        nav("/furniture")
+       }}
        >Shop Furnitures & Beds</Button>
        </Box>
 
@@ -88,6 +105,9 @@ export const Home2nd=()=>{
        top="-60px"
        color={"gray.700"}
        opacity={"1"}
+       onClick={()=>{
+        nav("/furniture")
+       }}
        >Shop Decors</Button>
        </Box>
        </Stack>
@@ -113,6 +133,9 @@ export const Home2nd=()=>{
        top="-60px"
        color={"gray.700"}
        opacity={"1"}
+       onClick={()=>{
+        nav("/furniture")
+       }}
        >Shop Furniture</Button>
        </Box>
 
@@ -124,6 +147,9 @@ export const Home2nd=()=>{
        top="-60px"
        color={"gray.700"}
        opacity={"1"}
+       onClick={()=>{
+        nav("/furniture")
+       }}
        >Shop Kitchen And Dining</Button>
        </Box>
        </Stack>
@@ -143,6 +169,9 @@ export const Home2nd=()=>{
        top="-60px"
        color={"gray.700"}
        opacity={"1"}
+       onClick={()=>{
+        nav("/furniture")
+       }}
        >Shop the Lauren Mcintosh Collection</Button>
        </Box>
 
@@ -175,7 +204,7 @@ export const Home2nd=()=>{
 margin={"auto"} mb="50px" borderBottom="10px solid #E3DFFD"
 >
   <Text> Top-Rated Picks</Text>
- <Link href=""
+ <Link href="/fashion"
 color={"blue.800"}
 >Shop All</Link>
 

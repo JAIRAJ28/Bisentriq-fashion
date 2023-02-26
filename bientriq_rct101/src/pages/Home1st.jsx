@@ -8,9 +8,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ProductSimple from "./CardSimple"
 import { CardRate } from "./Cardwithrate";
+import { useNavigate } from "react-router-dom";
 export const Home1st=()=>{
     const [windowSize, setWindowSize] = useState(getWindowSize());
-
+    let nav=useNavigate()
     useEffect(() => {
       function handleWindowResize() {
         setWindowSize(getWindowSize());
@@ -147,15 +148,31 @@ export const Home1st=()=>{
         <Box>
         <Stack w={["50%","50%","93%"]}  margin="auto"  direction={["column","column","row","row"]} mt="2%"  justifyContent={"space-evenly"}  spacing={3}>
        
-         <Image  className={styles.upImage} src="https://images.ctfassets.net/5de70he6op10/2nrwWxJ7TQjvhycNGHksLK/51645a9e392800577d6200a92a1edc88/473929279-ls_m0_banner_g.jpg?w=630&q=80&fm=webp" alt="" />
+         <Image 
+         onClick={()=>{
+          nav("/fashion")
+         }}
+         className={styles.upImage} src="https://images.ctfassets.net/5de70he6op10/2nrwWxJ7TQjvhycNGHksLK/51645a9e392800577d6200a92a1edc88/473929279-ls_m0_banner_g.jpg?w=630&q=80&fm=webp" alt="" />
   
       
-         <Image className={styles.upImage} src="https://i.ibb.co/Y27qJNC/473929275-ls-m0-banner-f.webp" alt=""/>
+         <Image 
+          onClick={()=>{
+            nav("/shoes")
+           }}
+         className={styles.upImage} src="https://i.ibb.co/Y27qJNC/473929275-ls-m0-banner-f.webp" alt=""/>
 
        
-         <Image className={styles.upImage} src="https://i.ibb.co/Zc1CM7h/3rd.webp" alt=""/>
+         <Image 
+           onClick={()=>{
+            nav("/furniture")
+           }}
+         className={styles.upImage} src="https://i.ibb.co/Zc1CM7h/3rd.webp" alt=""/>
 
-         <Image className={styles.upImage} src="https://i.ibb.co/p0LMwgY/473929265-ls-m0-banner-b.webp" alt="473929265-ls-m0-banner-b"/>
+         <Image 
+         onClick={()=>{
+          nav("/newAll")
+         }}
+         className={styles.upImage} src="https://i.ibb.co/p0LMwgY/473929265-ls-m0-banner-b.webp" alt="473929265-ls-m0-banner-b"/>
         
          </Stack>
         </Box>
@@ -182,7 +199,11 @@ export const Home1st=()=>{
          left={"-80px"}
          >Show More</Button>
          </> ): (<><Image 
-           
+               
+               onClick={()=>{
+                nav("/fashion")
+               }}
+
             w="92%"
             m="auto"
             // src={process.env.PUBLIC_URL + "./Home1images/mainobne.jpg"}
@@ -203,6 +224,7 @@ export const Home1st=()=>{
     <> {windowSize.innerWidth<=720?(<>
         <ProductSimple
 IMAGE={'https://i.ibb.co/64n2yJd/bikini-1.webp'}
+
 />
 <ProductSimple
 IMAGE={'https://i.ibb.co/pr7mRcV/bikini-2.webp'}
@@ -230,13 +252,19 @@ IMAGE={'https://i.ibb.co/pdsPrg4/bikini3.webp'}
        mt={"60px"}
        >
         <Box w="100%">
-       <Image w="95%" src="https://i.ibb.co/wScGkwS/furniture-home-demo.webp" alt="furniture 1"/>
+       <Image w="95%" 
+
+       src="https://i.ibb.co/wScGkwS/furniture-home-demo.webp" alt="furniture 1"/>
 
        <Button
        position={"relative"}
        top="-60px"
        color={"gray.700"}
        opacity={"1"}
+       onClick={()=>{
+        nav("/fashion")
+       }}
+
        >Shop Kitchen And Dining</Button>
        </Box>
 
@@ -247,6 +275,10 @@ IMAGE={'https://i.ibb.co/pdsPrg4/bikini3.webp'}
        top="-60px"
        color={"gray.700"}
        opacity={"1"}
+       onClick={()=>{
+        nav("/fashion")
+       }}
+
        >Shop Kitchen And Dining</Button>
        </Box>
        </Stack>
@@ -264,6 +296,10 @@ justifyContent="space-around"
        top="-60px"
        color={"gray.700"}
        opacity={"1"}
+       onClick={()=>{
+        nav("/fashion")
+       }}
+
        >shop spring entertaining essentials
        </Button>
   </Box>
@@ -276,6 +312,10 @@ justifyContent="space-around"
        top="-60px"
        color={"gray.700"}
        opacity={"1"}
+       onClick={()=>{
+        nav("/fashion")
+       }}
+
        >shop tops
        </Button>
   </Box>
@@ -288,6 +328,10 @@ justifyContent="space-around"
        top="-60px"
        color={"gray.700"}
        opacity={"1"}
+       onClick={()=>{
+        nav("/newAll")
+       }}
+
        >shop dresses</Button>
   </Box>
 </Stack>
@@ -305,6 +349,9 @@ justifyContent="space-around"
        top="-60px"
        color={"gray.700"}
        opacity={"1"}
+       onClick={()=>{
+        nav("/furniture")
+       }}
        >shop weddings</Button>
  </Box>
 

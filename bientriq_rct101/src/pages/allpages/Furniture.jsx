@@ -5,7 +5,8 @@ import { Link } from "react-router-dom"
 import { Box,Image ,Text,Grid,Button,Spinner } from "@chakra-ui/react"
 import CartFurniture from "./allfur"
 import { AiOutlineRight ,AiOutlineLeft} from "react-icons/ai";
-
+import { useContext } from "react"
+import { Authcontext } from "../../Navbar/Authcontext/contextApi"
 const getData=(name,params,page)=>{
     return axios.get(`https://anthroapi.onrender.com/all_product?_limit=15&_page=${page}`,{
       params
@@ -40,6 +41,7 @@ export const Furniture=({name})=>{
     const[state,dispatcher] = useReducer(reducer,initialState);
     const [order,setOrder] = useState("")
     const [filter,setFilter] = useState("")
+    const {isSearched}=useContext(Authcontext)
     let [td,setTd]=useState(0)
     let [page,setPage]=useState(1)
     useEffect(()=>{
@@ -48,7 +50,7 @@ export const Furniture=({name})=>{
       // if(order!=="asc"||order!="desc"){
       //   k=order
       // }
-      param = filter?{...param,q:filter}:{...param}
+      param = isSearched?{...param,q:isSearched}:{...param,q:filter}
       console.log(order)
       dispatcher({type:"isLoading",payload:true})
         getData(name,param,page).then((res)=>{
@@ -62,7 +64,7 @@ export const Furniture=({name})=>{
         .finally(()=>{
           dispatcher({type:"isLoading",payload:false})
         })
-    },[order,filter,page])
+    },[order,filter,page,isSearched])
 
    const handelFiltered=(e)=>{
     if(e.target.value==="asc"|| e.target.value==="desc"){
