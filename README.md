@@ -25,6 +25,9 @@ It is an clone of the Anthropologie made by me within 5 days.
 
 # 4) Checkout Page:
 ![Screenshot (318)](https://user-images.githubusercontent.com/112754558/221497615-ee726bd4-7891-46ae-9ea3-37af3e6f227a.png)
+5) Tracking Page:
+![Screenshot (325)](https://user-images.githubusercontent.com/112754558/221503535-6a8d1543-7674-461e-8c0f-594c0017ba59.png)
 
-# 5) Admin Page:
+
+# 6) Admin Page:
 ![Screenshot (323)](https://user-images.githubusercontent.com/112754558/221497652-54a32ed4-2ec8-4c00-87af-bcc8d85a51ce.png)
