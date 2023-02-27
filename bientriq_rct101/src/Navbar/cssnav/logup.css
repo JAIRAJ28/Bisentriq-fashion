@@ -11,8 +11,8 @@
     border: 1px solid rgb(157, 240, 221);
     padding: 2px;
  position: absolute;
- z-index: 1;
- background-color: #7FE9DE;
+ z-index: 12;
+ 
  opacity: none;
  top: 34px;
  font-style: oblique;

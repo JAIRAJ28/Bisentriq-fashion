@@ -9,13 +9,15 @@ import { Login } from "./Components/signin/signup/login";
 import { useState } from "react";
 import { Checkcreate } from "./Components/signin/signup/check";
 import Signup from "./Components/signin/signup/signup";
+import { useNavigate } from "react-router-dom";
 const LoginsinBar=()=>{
 let [showpop,setpop]=useState(false)
 let [showcheck,setcheck]=useState(false)
 let [showSignup,setshowSignup]=useState(false)
-
+let nav=useNavigate()
 // handel the popup and closing and the same time showing another
 const handelClick=()=>{
+    nav("/")
     setpop(!showpop)
     setcheck(false)
     setshowSignup(false)
@@ -76,7 +78,7 @@ const handelClosesignup=()=>{
      {showSignup&&<Signup
      changeSignup={handelSignup}
      handelClosesignup={handelClosesignup}
-     
+     handelClick={handelClick}
      />}
        
 

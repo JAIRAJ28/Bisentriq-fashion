@@ -46,11 +46,9 @@ const handelDelete=(id)=>{
         <Link href="/admin/add"> Add</Link>
            </Box>
         <Box cursor={"pointer"}>
-        <Link href="/admin/add">Orders</Link>
+        <Link href="/admin/orders">Orders</Link>
            </Box>
-        <Box cursor={"pointer"}>
-        <Link href="/admin/add"></Link>
-            </Box>
+     
     </Stack>
     <Box   p="20px" ml="5%">
         <Box     fontSize={"20px"} >

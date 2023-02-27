@@ -30,6 +30,8 @@ import {
   import { useContext } from "react"
 import { Authcontext } from '../Authcontext/contextApi';
 import { useNavigate } from 'react-router-dom';
+import { BiLogOut } from "react-icons/bi";
+
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
     const {toggleAuth,isAuth,handelSearch,isSearched}=useContext(Authcontext)
@@ -39,7 +41,7 @@ console.log(isSearched)
 
     return (
       <>
-      <Box position={"sticky"} left="0" top="1" width={"100%"} zIndex="5">
+      <Box position={"sticky"} left="0" top="0" width={"100%"} zIndex="5">
         <Box  bg="#E1FFEE" display={"flex"} justifyContent={'space-between'} >
         <Box display={"flex"}>
              <Link href="/" display={"flex"}>
@@ -59,19 +61,29 @@ console.log(isSearched)
             
             
             />
-          {  isAuth?<HiOutlineShoppingBag cursor={"pointer"}  color="#FFA3FD" margintop={"40px"} size={"50px"}
+          {  isAuth?<HiOutlineShoppingBag cursor={"pointer"}  color="#FFA3FD" margintop={"40px"} size={"80px"}
           onClick={()=>{
             nav('/addtocart')
           }}
 
           />:<TbUserOff
-           margintop={"40px"} size={"50px"} color="#F55050"
+           margintop={"40px"} size={"40px"} color="#F55050"
            onClick={()=>{
             alert("Please Login")
+            nav('/')
            }}
           />}
+           {isAuth?<BiLogOut 
+            onClick={()=>{
+              alert("Logged Out")
+              toggleAuth()
+              nav('/')
+             }}
+           
+           size={"30px"}/>:""}
         </Box>
         
+
         </Box>
         <hr />
       <Box
@@ -339,8 +351,8 @@ console.log(isSearched)
             href: '#',
           },
           {
-            label: 'Jewelry',
-            href: '#',
+            label: 'shoes',
+            href: '/shoes',
           },
         ],
     },
@@ -349,12 +361,12 @@ console.log(isSearched)
       href: '/fashion',
     },
     {
-      label: 'Shoes',
-      href: '#',
+      label: 'Flip-Flops/Sandals',
+      href: '/shoes',
     },
     {
         label: 'Accessories',
-        href: '#',
+        href: '/shoes',
       },
       {
         label: 'Weddings',
@@ -378,7 +390,7 @@ console.log(isSearched)
       },
       {
         label: 'Sales',
-        href: '#',
+        href: '/shoes',
       },
   ];
 
