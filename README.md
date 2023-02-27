@@ -25,7 +25,7 @@ It is a Fully funtional website.
  
  <img src="https://i.ibb.co/SNrnMF7/Screenshot-316.png" alt="react" width="40" height="40"/>
   <h1>Furniture Landing Page</h1>
-  <img src="https://i.ibb.co/PjrjQwk/Screenshot-320.png"  alt="react" width="40" height="40"/>
+  <img width="100% src="https://i.ibb.co/PjrjQwk/Screenshot-320.png"  alt="react" width="40" height="40"/>
  
    <h1>Sign In Pagee</h1>
   <img src="https://i.ibb.co/NVD21Xq/Screenshot-317.png"  alt="react" width="40" height="40"/>
