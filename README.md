@@ -21,23 +21,23 @@
  <h3>It is an ecommerce website provides fashion stuff for womens and home decors furniture . It provide home delivery and can be access from any devices.
 It is a Fully funtional website.
  
- <h1>Home Landing Page</h1>
+Home Landing Page
  
  <img src="https://i.ibb.co/SNrnMF7/Screenshot-316.png" alt="react" width="40" height="40"/>
-  <h1>Furniture Landing Page</h1>
+ Furniture Landing Page
   <img width="100% src="https://i.ibb.co/PjrjQwk/Screenshot-320.png"  alt="react" width="40" height="40"/>
  
-   <h1>Sign In Pagee</h1>
+   Sign In Pagee
   <img src="https://i.ibb.co/NVD21Xq/Screenshot-317.png"  alt="react" width="40" height="40"/>
  
-    <h1>Product Pages</h1>
+   Product Pages
   <img src="https://i.ibb.co/4dryr6L/Screenshot-321.png"  alt="react" width="40" height="40"/>
   <img src="https://i.ibb.co/3RYrhR8/Screenshot-322.png"  alt="react" width="40" height="40"/>
  
-   <h1>CArt Page & CheckOut Page</h1>
+   CArt Page & CheckOut Page
   <img src="https://i.ibb.co/YfhLFVT/Screenshot-318.png"  alt="react" width="40" height="40"/>
  
- <h1>Admin Dashboard</h1>
+ Admin Dashboard
   <img src="https://i.ibb.co/WxDvXyv/Screenshot-323.png"  alt="react" width="40" height="40"/>
  
 </h3>
