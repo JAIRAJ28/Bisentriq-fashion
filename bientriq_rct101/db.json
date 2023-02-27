@@ -1,0 +1,337 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "id": "1",
+      "image": "https://i.ibb.co/J2Rx6Tm/4122900970070-091-b2.webp",
+      "price": 75,
+      "category": "Dungarie",
+      "quantity": 1
+    },
+    {
+      "id": "2",
+      "image": "https://i.ibb.co/p2vWKmn/3rddown.webp",
+      "price": 654,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "3",
+      "image": "https://i.ibb.co/MRzsPgt/3rd3rddown.webp",
+      "price": 4,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "4",
+      "image": "https://i.ibb.co/Y7b55bk/473929238-ls-customerfave-a.webp",
+      "price": 234,
+      "category": "Half Black",
+      "quantity": 1
+    },
+    {
+      "id": "5",
+      "image": "https://i.ibb.co/cL8MsZ7/MTE-1.webp",
+      "price": 567,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "6",
+      "image": "https://i.ibb.co/Hr1j20M/4110318350061-083-b2.webp",
+      "price": 435,
+      "category": "Feel Top",
+      "quantity": 1
+    },
+    {
+      "id": "7",
+      "image": "https://i.ibb.co/cL8MsZ7/MTE-1.webp",
+      "price": 243,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "8",
+      "image": "https://i.ibb.co/Bf9ZPzF/473929254-ls-customerfave-d.webp",
+      "price": 76,
+      "category": "Feel Top",
+      "quantity": 1
+    },
+    {
+      "id": "9",
+      "image": "https://i.ibb.co/cL8MsZ7/MTE-1.webp",
+      "price": 234,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "10",
+      "image": "https://i.ibb.co/DLRxzD5/4130607630016-041-b2.webp",
+      "price": 234,
+      "category": "Half Black",
+      "quantity": 1
+    },
+    {
+      "id": "11",
+      "image": "https://i.ibb.co/8gZC6JF/66039397-072-b2.webp",
+      "price": 546,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "12",
+      "image": "https://i.ibb.co/VHcVz5s/4130943510003-066-b15.webp",
+      "price": 34,
+      "category": "Half Black",
+      "quantity": 1
+    },
+    {
+      "id": "13",
+      "image": "https://i.ibb.co/TKZRsds/47322425-013-b1.webp",
+      "price": 543,
+      "category": "Feel Top",
+      "quantity": 1
+    },
+    {
+      "id": "14",
+      "image": "https://i.ibb.co/9TggXh1/67805515-061-b2.webp",
+      "price": 324,
+      "category": "Feel Comfortable",
+      "quantity": 1
+    },
+    {
+      "id": "15",
+      "image": "https://i.ibb.co/B2Wmzx5/80354293-011-b2.webp",
+      "price": 423,
+      "category": "Feel Comfortable",
+      "quantity": 1
+    },
+    {
+      "id": "16",
+      "image": "https://i.ibb.co/Hr1j20M/4110318350061-083-b2.webp",
+      "price": 564,
+      "category": "Feel Top",
+      "quantity": 1
+    },
+    {
+      "id": "18",
+      "image": "https://i.ibb.co/Dg1KNXd/4123212060036-089-b2.webp",
+      "price": 253,
+      "category": "Feel Top",
+      "quantity": 1
+    },
+    {
+      "id": "19",
+      "image": "https://i.ibb.co/n7TL1NY/4125650590054-237-b.webp",
+      "price": 654,
+      "category": "Feel Top",
+      "quantity": 1
+    },
+    {
+      "id": "20",
+      "image": "https://i.ibb.co/hDkYm3Z/4110916210171-049-b2.webp",
+      "price": 34,
+      "category": "Shirt",
+      "quantity": 1
+    },
+    {
+      "id": "21",
+      "image": "https://i.ibb.co/DLRxzD5/4130607630016-041-b2.webp",
+      "price": 564,
+      "category": "Feel Full",
+      "quantity": 1
+    },
+    {
+      "id": "22",
+      "image": "https://i.ibb.co/xFPfQzm/4130572540025-023-b2.webp",
+      "price": 788,
+      "category": "Feel Full",
+      "quantity": 1
+    },
+    {
+      "id": "23",
+      "image": "https://i.ibb.co/pjYpYWM/68588706-001-b2.webp",
+      "price": 35,
+      "category": "Half Black",
+      "quantity": 1
+    },
+    {
+      "id": "24",
+      "image": "https://i.ibb.co/PTK4PQd/80729478-001-b2.webp",
+      "price": 564,
+      "category": "Feel Black",
+      "quantity": 1
+    },
+    {
+      "id": "25",
+      "image": "https://i.ibb.co/pwWJFK9/4120646420008-065-b.webp",
+      "price": 54,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "26",
+      "image": "https://i.ibb.co/vJTYfWX/4112346380020-010-b15.webp",
+      "price": 875,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "27",
+      "image": "https://i.ibb.co/Y7b55bk/473929238-ls-customerfave-a.webp",
+      "price": 76,
+      "category": "Feel Black",
+      "quantity": 1
+    },
+    {
+      "id": "28",
+      "image": "https://i.ibb.co/VHcVz5s/4130943510003-066-b15.webp",
+      "price": 321,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "29",
+      "image": "https://i.ibb.co/8gZC6JF/66039397-072-b2.webp",
+      "price": 34,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "30",
+      "image": "https://i.ibb.co/pnCssXF/69794386-012-b.webp",
+      "price": 123,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "31",
+      "image": "https://i.ibb.co/pwWJFK9/4120646420008-065-b.webp",
+      "price": 54,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "321",
+      "image": "https://i.ibb.co/vJTYfWX/4112346380020-010-b15.webp",
+      "price": 875,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "27321",
+      "image": "https://i.ibb.co/Y7b55bk/473929238-ls-customerfave-a.webp",
+      "price": 76,
+      "category": "Feel Black",
+      "quantity": 1
+    },
+    {
+      "id": "312",
+      "image": "https://i.ibb.co/VHcVz5s/4130943510003-066-b15.webp",
+      "price": 321,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "234",
+      "image": "https://i.ibb.co/8gZC6JF/66039397-072-b2.webp",
+      "price": 34,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "2344",
+      "image": "https://i.ibb.co/pnCssXF/69794386-012-b.webp",
+      "price": 123,
+      "category": "Beauties",
+      "quantity": 1
+    },
+    {
+      "id": "3434",
+      "image": "https://i.ibb.co/B2Wmzx5/80354293-011-b2.webp",
+      "price": 423,
+      "category": "Feel Comfortable",
+      "quantity": 1
+    },
+    {
+      "id": "543",
+      "image": "https://i.ibb.co/Hr1j20M/4110318350061-083-b2.webp",
+      "price": 564,
+      "category": "Feel Top",
+      "quantity": 1
+    },
+    {
+      "id": "43554",
+      "image": "https://i.ibb.co/Hr1j20M/4110318350061-083-b2.webp",
+      "price": 35,
+      "category": "Feel Top",
+      "quantity": 1
+    },
+    {
+      "id": "4355",
+      "image": "https://i.ibb.co/Dg1KNXd/4123212060036-089-b2.webp",
+      "price": 253,
+      "category": "Feel Top",
+      "quantity": 1
+    },
+    {
+      "id": "43534",
+      "image": "https://i.ibb.co/n7TL1NY/4125650590054-237-b.webp",
+      "price": 654,
+      "category": "Feel Top",
+      "quantity": 1
+    },
+    {
+      "id": "453",
+      "image": "https://i.ibb.co/hDkYm3Z/4110916210171-049-b2.webp",
+      "price": 34,
+      "category": "Shirt",
+      "quantity": 1
+    },
+    {
+      "id": "24234",
+      "image": "https://i.ibb.co/DLRxzD5/4130607630016-041-b2.webp",
+      "price": 564,
+      "category": "Feel Full",
+      "quantity": 1
+    },
+    {
+      "id": "3424",
+      "image": "https://i.ibb.co/xFPfQzm/4130572540025-023-b2.webp",
+      "price": 788,
+      "category": "Feel Full",
+      "quantity": 1
+    },
+    {
+      "title": "wsw",
+      "price": "233",
+      "description": "Check This one",
+      "category": "Beauties",
+      "image": "https://i.ibb.co/ctQrhMG/80729478-001-b2.webp",
+      "rating": "",
+      "id": "7AzrMZM"
+    },
+    {
+      "title": "Check",
+      "price": "3334",
+      "description": "nice",
+      "category": "Beauties",
+      "image": "https://i.ibb.co/9TggXh1/67805515-061-b2.webp",
+      "rating": "",
+      "id": "bWulLlo"
+    }
+  ]
+}

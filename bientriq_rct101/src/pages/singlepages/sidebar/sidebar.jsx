@@ -6,8 +6,10 @@ import {
   AccordionButton,
   AccordionPanel,
 } from "@chakra-ui/react";
+import { useNavigate } from 'react-router-dom';
 import { MinusIcon, AddIcon } from "@chakra-ui/icons";
 function Sidebar() {
+  let nav=useNavigate()
   return (
     <>
       
@@ -34,6 +36,9 @@ function Sidebar() {
               }}
               mb={"0px"}
               cursor={"pointer"}
+              onClick={()=>{
+                nav("/fashion")
+               }}
             >
               Clothing
             </Text>
@@ -45,6 +50,9 @@ function Sidebar() {
                 }}
                 mb={"3px"}
                 cursor={"pointer"}
+                onClick={()=>{
+                  nav("/newAll")
+                 }}
               >
                 New!
               </Text>
@@ -55,6 +63,9 @@ function Sidebar() {
                 }}
                 mb={"3px"}
                 cursor={"pointer"}
+                onClick={()=>{
+                  nav("/newAll")
+                 }}
               >
                 Top Rated
               </Text>
@@ -105,6 +116,9 @@ function Sidebar() {
                 }}
                 mb={"3px"}
                 cursor={"pointer"}
+                onClick={()=>{
+                  nav("/fashion")
+                 }}
               >
                 Intimates & Lingerie
               </Text>
@@ -226,6 +240,9 @@ function Sidebar() {
                 }}
                 mb={"3px"}
                 cursor={"pointer"}
+                onClick={()=>{
+                  nav("/newAll")
+                 }}
               >
                 Swimwear
               </Text>
@@ -281,6 +298,9 @@ function Sidebar() {
                         }}
                         cursor={"pointer"}
                         w="160px"
+                        onClick={()=>{
+                          nav("/fashion")
+                         }}
                       >
                         <Text>Tops (709)</Text>
                       </Box>
@@ -292,6 +312,9 @@ function Sidebar() {
                         }}
                         cursor={"pointer"}
                         w="160px"
+                        onClick={()=>{
+                          nav("/newAll")
+                         }}
                       >
                         <Text>Dresses (586)</Text>
                       </Box>
@@ -303,6 +326,9 @@ function Sidebar() {
                         }}
                         cursor={"pointer"}
                         w="160px"
+                        onClick={()=>{
+                          nav("/fashion")
+                         }}
                       >
                         <Text>Jeans (499)</Text>
                       </Box>

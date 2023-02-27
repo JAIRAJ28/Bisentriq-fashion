@@ -1,4 +1,4 @@
-import { Link } from "@chakra-ui/react"
+import { Link,Image } from "@chakra-ui/react"
 import "./logpop.css"
 import { useState } from "react"
 import { signInWithEmailAndPassword } from "firebase/auth"
@@ -7,7 +7,7 @@ import { auth } from "../../../../firbase"
 import { useContext } from "react"
 import { Authcontext } from "../../../Authcontext/contextApi"
 
-export const Login=({changeonClick,changeSignup,showCreate,showpop,handelCreate})=>{
+export const Login=({changeonClick,changeSignup,showCreate,showpop,handelCreate,handelClick})=>{
   
   const [errMessg,setErr]=useState(false)
   const navigate=useNavigate()
@@ -91,7 +91,14 @@ export const Login=({changeonClick,changeSignup,showCreate,showpop,handelCreate}
         changeonClick()
         changeSignup() 
       }}>Create An Account</button>
-          
+          <Image
+          width="40px"
+          onClick={()=>{
+            handelClick()
+            navigate("/admin")
+          }}
+          src="https://i.ibb.co/yFsp5BV/154832661-manager-at-work-administrator-time-management-office-deadline-man-scheduled-task-productiv.webp"
+          />
       </div>
 
 </>

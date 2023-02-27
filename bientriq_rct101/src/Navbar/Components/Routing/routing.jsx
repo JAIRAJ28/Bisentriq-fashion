@@ -10,6 +10,14 @@ import { Alldress } from "../../../pages/allpages/AllDress";
 import SingleAlldress from "../../../pages/allpages/singleAlldres";
 import { Furniture } from "../../../pages/allpages/Furniture";
 import SingleFurniture from "../../../pages/allpages/allfur";
+import SingleAllfur from "../../../pages/allpages/singlefur";
+import { Shoespg } from "../../../pages/allpages/shoes";
+import ShoesSingle from "../../../pages/allpages/shoesSingle";
+import { Track } from "../../../pages/allpages/track";
+import { Admin } from "../../../Admin/adminsign";
+import { Dashboard } from "../../../Admin/dashboard";
+import OrmAdmin from "../../../Admin/add";
+import AdminOrders from "../../../Admin/adminorders";
 const Allroutes = () => {
     return (
       <>
@@ -24,7 +32,10 @@ const Allroutes = () => {
 <Route path='/newAll/:id' element={<SingleAlldress/>}/>
 
 <Route path="/furniture" element={<Furniture/>}/>
-<Route path="/furniture:id" element={<SingleFurniture/>}/>
+<Route path="/furniture/:id" element={<SingleAllfur/>}/>
+
+<Route path="/shoes" element={<Shoespg/>}/>
+<Route path="/shoes/:id" element={<ShoesSingle/>}/>
 
 <Route path="/fashion" element={<Fashion />}/>
 
@@ -36,8 +47,20 @@ const Allroutes = () => {
 </PrivateRoute>
 }/>
 
+<Route path="/track" element={
+  <PrivateRoute >
+<Track/>
+</PrivateRoute>}/>
+<Route path="/admin" element={<Admin/>}/>
+<Route path="/admin/dashboard" element={<Dashboard/>}/>
 
+<Route path="/admin/add" element={<OrmAdmin/>}/>
+<Route path="/admin/orders"  element={<AdminOrders/>}/>
 </Routes>
+
+
+
+
 </>
 );
 };

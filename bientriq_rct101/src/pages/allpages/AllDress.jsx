@@ -1,22 +1,47 @@
-import { Box,Image ,Text,Grid,Button} from "@chakra-ui/react"
-import Sidebar from "./singlepages/sidebar/sidebar"
-import CArtComp from "./singlepages/sidebar/universalcard"
-import { useState,useEffect } from "react"
 import axios from "axios"
-import { Spinner } from '@chakra-ui/react'
+import { useState,useEffect,useReducer } from "react"
+import Sidebar from "../singlepages/sidebar/sidebar"
+import { Link } from "react-router-dom"
+import { Box,Image ,Text,Grid,Button,Spinner } from "@chakra-ui/react"
+import AllCArtComp from "./newUniversal"
 import { AiOutlineRight ,AiOutlineLeft} from "react-icons/ai";
+import { useContext } from "react"
+import { Authcontext } from "../../Navbar/Authcontext/contextApi"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-const getData=(page,limit,sort,filtered)=>{
-    return axios.get(`http://localhost:8080/profile?_limit=15&_page=${page}`)
-}
-let url=`http://localhost:8080/profile`
-const anotherData=(params)=>{
-    return axios.get(`http://localhost:8080/profile?_limit=15`,{
-        params
+const getData=(name,params,page)=>{
+    return axios.get(`https://anthroapi.onrender.com/cloths?_limit=15&_page=${page}`,{
+      params
+      // category:{category}
     })
 }
-let arr2=[
+
+
+let limit=15
+let url=`https://anthroapi.onrender.com/cloths`
+
+const initialState = {
+    data: [],
+    isLoading: true,
+    error: null,
+  };
+const reducer = (state,action) => {
+    switch(action.type){
+      case "data":return{
+        ...state,data:action.payload
+    }
+      case "isLoading":return{
+        ...state,isLoading:action.payload
+    }
+      case "error":return{
+        ...state,error:action.payload
+    }
+      default:return{
+        state
+    }
+    }
+  };
+  let arr2=[
     {
       imgSrc:"https://i.ibb.co/TMK6tr4/4112210690147-066-b2.webp",
       des:"Eva Franco Lace Floral Blouse"
@@ -82,66 +107,52 @@ let arr2=[
       items: 1
     }
   };
+export const Alldress=({name})=>{
+    const[state,dispatcher] = useReducer(reducer,initialState);
+    const [order,setOrder] = useState("")
+    const [filter,setFilter] = useState("")
+    const {isSearched}=useContext(Authcontext)
+    let [td,setTd]=useState(0)
+    let [page,setPage]=useState(1)
+    useEffect(()=>{
+      let param = order?{_sort:"price",_order:order}:{}
+      // let k=""
+      // if(order!=="asc"||order!="desc"){
+      //   k=order
+      // }
+      param = isSearched?{...param,q:isSearched}:{...param,q:filter}
+      console.log(order)
+      dispatcher({type:"isLoading",payload:true})
+        getData(name,param,page).then((res)=>{
+          dispatcher({type: "data", payload: res.data})
+          setTd(res.headers.get("x-total-count"));
+          console.log(res.data)
+        }).catch((err)=>{
+          console.log(err)
+          dispatcher({type:"error",payload:true})
+        })
+        .finally(()=>{
+          dispatcher({type:"isLoading",payload:false})
+        })
+    },[order,filter,page,isSearched])
 
-export const Fashion=()=>{
-let [fash,setFash]=useState([])
-let [isLoading,setLoading]=useState("false")
-let [isErr,setErr]=useState("false")
-let [page,setPage]=useState(1) 
-let [td,setTd]=useState(0)
-let [sort,setSort]=useState("")
+   const handelFiltered=(e)=>{
+    if(e.target.value==="asc"|| e.target.value==="desc"){
+    setOrder(e.target.value)
+    }else{
+      setFilter(e.target.value)
+    }
+   }
 
-
-let limit=15
-
-
-
-const handelFetch=async(page,limit,sort,filtered)=>{
-    setLoading(true)
-try {
-    let res= await getData(page,limit,sort,filtered)
-    console.log(res)
-    setFash(res.data)
-    setLoading(false)
-    setTd(res.headers.get("x-total-count"));
-} catch (error) {
-    setErr(true)
-    console.log(error)
-}
-}
-
-useEffect(()=>{
-    handelFetch(page,sort)
-},[page,sort])
-console.log(fash)
-console.log(td)
-
-const handelPage=(val)=>{
+   const handelPage=(val)=>{
     setPage((prev)=>prev+val)
 }
 
-const handelFiltered=(e)=>{
-    if(e.target.value==="asc"|| e.target.value==="desc"){
-        if(e.target.value==="asc"){
-            let arr=[...fash].sort((a,b)=>a.price-b.price)
-            setFash(arr)
-        }
-        else{
-            let arr=[...fash].sort((a,b)=>b.price-a.price)
-            setFash(arr)
-        }
+console.log(td/limit)
 
-    }else{
-        
-            const params=e.target.value?{q:e.target.value}:{}
-            anotherData(params).then((res)=>setFash(res.data))
-            
-}}
-
-console.log(td)
     return(
         <>
-        <Grid dispaly={"grid"} templateColumns={['repeat(2, 1fr)','repeat(2, 1fr)','repeat(6, 1fr)']} gap={6}
+                <Grid dispaly={"grid"} templateColumns={['repeat(2, 1fr)','repeat(2, 1fr)','repeat(6, 1fr)']} gap={6}
         margin="20px"
         >
         <Box>
@@ -229,16 +240,14 @@ console.log(td)
             >Tops</Text>
         </Box>
         </Grid>
-
-
-      <div
+        <div 
         style={{
-            display:"flex"
+          display:"flex"
         }}
-        
         >
         <Sidebar/>
-       
+        
+
         <Box>
 
 <Box display={"flex"}
@@ -249,12 +258,7 @@ justifyContent={"space-around"}
  <Box
  fontWeight={"900"}
  >
-
-
-
-
-
-    <label
+   <label
     style={{fontWeight: "800"}}
     padding="10px"
     mr="10px"
@@ -265,22 +269,23 @@ justifyContent={"space-around"}
     >   <option value="">Filter Yor Need</option>
         <option value="asc">Price Low To High</option>
         <option value="desc">Price High To Low</option>
-        <option value="Beauties">Beauties</option>
-        <option value="Dungarie">Dungarie</option>
-        <option value="Feel Top">Feel Top</option>
-        <option value="Half Black">Half Black</option>
-        <option value="Feel Comfortable">Feel Comfortable</option>
+        <option value="Joslin">Joslin</option>
+        <option value="Letluv">Letluv</option>
+        <option value="Maaji">Maaji</option>
+        <option value="Hutch">Hutch</option>
     </select>
     </Box> 
   <Box display={"flex"}>
-    <Button mr="2px" isDisabled={page===1} onClick={()=>handelPage(-1)}>
+    <Button mr="2px" isDisabled={page===1}  onClick={()=>handelPage(-1)}>
+    {/* isDisabled={page===1} onClick={()=>handelPage(-1)} */}
    <AiOutlineLeft
    size="25px"
    
    /> 
    </Button>
    {page}
-   <Button ml="2px" isDisabled={page===(td/limit)}  onClick={()=>handelPage(1)}>
+   <Button ml="2px"  isDisabled={page===(Math.ceil(td/limit))}  onClick={()=>handelPage(1)} >
+  
    <AiOutlineRight 
     size="25px"
     
@@ -288,11 +293,7 @@ justifyContent={"space-around"}
     </Box>
 </Box>
 
-
-
-
-
-       { isLoading?(
+{ state.isLoading?(
         <>
             <Spinner
            
@@ -306,35 +307,36 @@ justifyContent={"space-around"}
              "Please Wait....."
             
 </>
-        ):(<Grid
+        ):  <Grid
         dispaly={"grid"} templateColumns={['repeat(2, 1fr)','repeat(2, 1fr)','repeat(3, 1fr)']}
         gap={"30px"}
         >
             {
-                fash?.map((item)=>(
-                <CArtComp
-                IMAGE={item.image}
-                txt1={item.category}
-                price={item.price}
-                Id={item.id}
-                url={url}
-                />
+               state.data?.map((item)=>(
+                <AllCArtComp
+                  IMAGE={item.img1?item.img1:item.img}
+                  txt1={item.category}
+                  name={item.title}
+                  size={item.size}
+                  price={item.price}
+                  Id={item.id}
+                  url={url}
+                  />
                 ))
             }
-        </Grid>)}
+        </Grid>
+}
         </Box>
-       
-       
-        </div>
-        <Box
+      </div>
+      <Box
 borderTop={"9px solid #F7C8E0"}
 borderBottom={"9px solid #F7C8E0"}
 width={"93%"}
-margin="auto" mt="90px" p="20px"
+margin="auto"
 >
 <Carousel  responsive={responsive}>
 {arr2.map((item)=>(
-  <Box w="70%" >
+  <Box w="70%" mt="90px">
     <Image src={item.imgSrc} 
     alt="images"
     />
@@ -344,6 +346,23 @@ margin="auto" mt="90px" p="20px"
 ))}
 </Carousel>
 </Box>
+<Box>
+  <Text>About Us</Text>
+  <Text>Our mission at Anthropologie has always been to surprise and delight you with unexpected, distinctive finds for your closet and home. We source and craft all of our products with care, ensuring that any treasure you find at Anthropologie is unique, just like you. Explore our dresses shop to find styles and fits perfect for any occasion, from cocktail party dresses to wedding guest dresses to casual daytime silhouettes. Shop BHLDN</Text>
+  <Link
+  href=""
+  color="blue.600"
+  >Read More</Link>
+</Box>
         </>
     )
 }
+{/* <CArtComp
+IMAGE={item.img1}
+txt1={item.category}
+name={item.title}
+size={item.size}
+price={item.price}
+Id={item.id}
+url={url}
+/> */}
