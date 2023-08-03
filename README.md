@@ -2,7 +2,7 @@
 Anthropologie is an American retailer operating in the U.S., Canada, and the UK that sells clothing, jewelry, home furniture, decorations, beauty products, and gifts. U.S. Anthropologie is part of URBN brands, which includes Urban Outfitters, Free People, BHLDN, and Terrain.
 <h2>Bisentriq</h2> 
 It is an clone of the Anthropologie made by me within 5 days.
-<h4> Live Link :  https://63fbc33d9a249e3c82af938a--bientriq.netlify.app/</h4>
+<h4> Live Link :  https://bientriqfash.netlify.app/</h4>
 ## The website contains several functionality, below is the demo pictures of the website pages along with the descripton of each page that has been build by me.
 
 <h2>Features :-</h2>

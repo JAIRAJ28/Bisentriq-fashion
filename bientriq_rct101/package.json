@@ -1,4 +1,5 @@
-{
+{ 
+  "homepage":".",
   "name": "bientriq_rct101",
   "version": "0.1.0",
   "private": true,

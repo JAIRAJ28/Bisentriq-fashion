@@ -1,7 +1,8 @@
 import { Flex,Text } from "@chakra-ui/react";
 import axios from "axios";
 import { useState } from "react";
- import { Link } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+
 
 
 const OrmAdmin=()=>{
@@ -31,9 +32,6 @@ const handelSubmit=(e)=>{
 
     alert("Added")
 }
-
-
-
     return(
         <>
               <div className="hey">
@@ -109,7 +107,7 @@ const handelSubmit=(e)=>{
       <input type="submit" value="ADD NEW" />
     </form>
 
-    <Link href="/admin/dashboard">
+    <Link to="/admin/dashboard">
    <Text
    fontSize={"20px"}
   fontWeight={"bold"}

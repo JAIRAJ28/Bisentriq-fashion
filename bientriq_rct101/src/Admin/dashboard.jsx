@@ -1,4 +1,4 @@
-import { Box,Stack,Image ,Text,Button,Link} from "@chakra-ui/react"
+import { Box,Stack,Image ,Text,Button} from "@chakra-ui/react"
 import {
     Table,
     Thead,
@@ -13,7 +13,7 @@ import {
 import axios from "axios"
 import { useState,useEffect } from "react"
 import { AiFillDelete } from "react-icons/ai"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 export const Dashboard=()=>{
     let nav=useNavigate()
  let [data,setData]=useState([])
@@ -39,14 +39,14 @@ const handelDelete=(id)=>{
    
     ml="10px" bg="#263159" color="white" fontWeight="600" textAlign={"start"} >
         <Box cursor={"pointer"} >
-          <Link href="/admin/dashboard"> Dash</Link>
+          <Link to="/admin/dashboard"> Dash</Link>
            
            </Box>
         <Box cursor={"pointer"}>
-        <Link href="/admin/add"> Add</Link>
+        <Link to="/admin/add"> Add</Link>
            </Box>
         <Box cursor={"pointer"}>
-        <Link href="/admin/orders">Orders</Link>
+        <Link to="/admin/orders">Orders</Link>
            </Box>
      
     </Stack>
