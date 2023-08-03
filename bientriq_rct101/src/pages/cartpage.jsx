@@ -18,18 +18,11 @@ import {
   TableCaption,
   TableContainer,
 } from '@chakra-ui/react'
-
-
 const getData=()=>{
     return axios.get(`https://636d2336ab4814f2b279de8f.mockapi.io//car`)
 }
-
-
-
-
 let array=[]
 function Cartpage(){
-
 const [data,setData]=useState([])
 const [qty,setQty]=useState(1)
 const [key,setKey]=useState("")

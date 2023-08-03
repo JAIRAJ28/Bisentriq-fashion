@@ -8,7 +8,7 @@ import {
     Stack,
     Collapse,
     Icon,
-    Link,
+    
     Popover,
     PopoverTrigger,
     PopoverContent,
@@ -29,7 +29,7 @@ import {
   // import {Link} from "react-router-dom"
   import { useContext } from "react"
 import { Authcontext } from '../Authcontext/contextApi';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BiLogOut } from "react-icons/bi";
 
   export default function WithSubnavigation() {
@@ -44,13 +44,13 @@ console.log(isSearched)
       <Box position={"sticky"} left="0" top="0" width={"100%"} zIndex="5">
         <Box  bg="#E1FFEE" display={"flex"} justifyContent={'space-between'} >
         <Box display={"flex"}>
-             <Link href="/" display={"flex"}>
+             <Link to="/" display={"flex"}>
              <Image 
               borderBottom={"4px solid #BAD7E9"} ml={"30px"}
              mt={"20px"}  w="250px" h="50px" overflow={"hidden"} src="https://i.ibb.co/z6fqy86/Screenshot-20230221-191152.png" alt="" />
              </Link>
              <hr />
-             <Link href="/home2nd">
+             <Link to="/home2nd">
             <Button br={"1px solid gray"} p="30px" ml="20px" mt="10px">bientriq <span style={{fontStyle:"italic"}}> Living</span> Fashions
             </Button></Link>
         </Box>
@@ -152,7 +152,7 @@ console.log(isSearched)
               <PopoverTrigger>
                 <Link
                   p={2}
-                  href={navItem.href ?? '#'}
+                  to={navItem.to ?? '#'}
                   fontSize={'sm'}
                   fontWeight={500}
                   color={linkColor}
@@ -186,10 +186,10 @@ console.log(isSearched)
     );
   };
   
-  const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+  const DesktopSubNav = ({ label, to, subLabel }: NavItem) => {
     return (
       <Link
-      href={href}
+      to={to}
       role={'group'}
         display={'block'}
         p={2}
@@ -233,7 +233,7 @@ console.log(isSearched)
     );
   };
   
-  const MobileNavItem = ({ label, children, href }: NavItem) => {
+  const MobileNavItem = ({ label, children, to }: NavItem) => {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
@@ -241,7 +241,7 @@ console.log(isSearched)
         <Flex
           py={2}
           as={Link}
-          href={href ?? '#'}
+          to={to ?? '#'}
           justify={'space-between'}
           align={'center'}
           _hover={{
@@ -275,7 +275,7 @@ console.log(isSearched)
             {children &&
               children.map((child) => (
                 <>
-                <Link key={child.label} py={2} href={child.href}>
+                <Link key={child.label} py={2} to={child.to}>
                   {child.label}
                 </Link>
                 </>
@@ -291,35 +291,35 @@ console.log(isSearched)
     label: string;
     subLabel?: string;
     children?: Array<NavItem>;
-    href?: string;
+    to?: string;
   }
   
   const NAV_ITEMS: Array<NavItem> = [
     {
       label: 'New!',
       h1:"Shop by Category",
-      href:"/newAll",
+      to:"/newAll",
       children: [
         {
           label: 'Accessories',
-            href: '/newAll',
+            to: '/newAll',
             
           },
           {
             label: 'Beauty & Wellness',
-            href: '/',
+            to: '/',
         },
         {
           label: 'Clothing',
-          href: '/fashion',
+          to: '/fashion',
         },
           {
             label: 'Dresses',
-            href: '/fashion',
+            to: '/fashion',
           },
           {
             label: 'Home & Furniture', 
-            href: '/furniture',
+            to: '/furniture',
           }
         
         ],
@@ -327,70 +327,70 @@ console.log(isSearched)
       },
     {
       label: 'Dresses',
-      href:"/fashion",
+      to:"/fashion",
       children: [
         {
           label: 'Accessories',
-            href: '/newAll',
+            to: '/newAll',
             
           },
           {
             label: 'Beauty & Wellness',
-            href: '/',
+            to: '/',
         },
         {
           label: 'Clothing',
-          href: '/fashion',
+          to: '/fashion',
         },
           {
             label: 'Dresses',
-            href: '/newAll',
+            to: '/newAll',
           },
           {
             label: 'Home & Furniture', 
-            href: '#',
+            to: '#',
           },
           {
             label: 'shoes',
-            href: '/shoes',
+            to: '/shoes',
           },
         ],
     },
     {
       label: 'Clothing',
-      href: '/fashion',
+      to: '/fashion',
     },
     {
       label: 'Flip-Flops/Sandals',
-      href: '/shoes',
+      to: '/shoes',
     },
     {
         label: 'Accessories',
-        href: '/shoes',
+        to: '/shoes',
       },
       {
         label: 'Weddings',
-        href: '#',
+        to: '#',
       },
       {
         label: 'Home & Furniture',
-        href: '/furniture',
+        to: '/furniture',
       },
       {
         label: 'Beauty & Wellness',
-        href: '/furniture',
+        to: '/furniture',
       },
       {
         label: 'Garden & Outdoor',
-        href: '#',
+        to: '#',
       },
       {
         label: 'Gift',
-        href: '#',
+        to: '#',
       },
       {
         label: 'Sales',
-        href: '/shoes',
+        to: '/shoes',
       },
   ];
 

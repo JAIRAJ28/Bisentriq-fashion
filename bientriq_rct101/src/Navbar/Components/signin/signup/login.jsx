@@ -13,14 +13,11 @@ export const Login=({changeonClick,changeSignup,showCreate,showpop,handelCreate,
   const navigate=useNavigate()
   let [data,setData]=useState({
     email:"",
-    
     password:"",
   })
   const {toggleAuth,isAuth,handelSearch,isSearched}=useContext(Authcontext)
   const HandelChange=(e)=>{
-  
     let val=e.target.value
-    // let name=e.target.name
     setData({...data,[e.target.type]:val})
   }
   console.log(data)

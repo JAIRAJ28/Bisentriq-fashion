@@ -1,11 +1,7 @@
 import { Card, CardHeader, CardBody, CardFooter,Image,Heading
-
 ,Text,Divider,ButtonGroup,Button,Stack,Link} from '@chakra-ui/react'
 
-
-
 export const CardRate=({image,Text1,Text2})=>{
-
     return(
         <>
         <Card maxW='sm'>
